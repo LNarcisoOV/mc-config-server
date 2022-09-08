@@ -7,7 +7,8 @@ services:
      ports:
        - 8078:8078
      environment:
-       eureka.instance.hostname: mc-config-server
+       WAIT_HOSTS: mc-address-eureka-server:8761
+       eureka.client.serviceUrl.defaultZone: http://mc-address-eureka-server:8761/eureka
        
    mc-address-eureka-server:
      build: ../mc-address-eureka-server
